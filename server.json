@@ -1,6 +1,6 @@
 {
   "plants_water_frequencies": [
-    {"key": "day", "title": "Todos os dias"},
+    {"key": "da", "title": "Todos os dias"},
     {"key": "week", "title": "A cada semana"}
   ],
 
