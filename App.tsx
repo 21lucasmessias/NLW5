@@ -1,14 +1,16 @@
-import React from 'react';
-import { StatusBar } from 'react-native';
-import Welcome from './src/pages/Welcome';
+import React, { Component } from 'react';
 
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle='dark-content' backgroundColor='#ffffff'/>
-      <Welcome/>
-    </>
-  );
+import Routes from './src/routes';
+
+import SplashScreen from 'react-native-splash-screen';
+
+export default class App extends Component {
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+  render(){
+    return (
+      <Routes/>
+    );
+  }
 };
-
-export default App;
