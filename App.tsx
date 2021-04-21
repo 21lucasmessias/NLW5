@@ -1,21 +1,13 @@
 import React from 'react';
-import {
-  StatusBar,
-  SafeAreaView,
-  Text,
-  View,
-} from 'react-native';
+import { StatusBar } from 'react-native';
+import Welcome from './src/pages/Welcome';
 
 const App = () => {
   return (
-    <SafeAreaView>
-      <StatusBar barStyle='dark-content' />
-      <View>
-        <Text>
-          Teste
-        </Text>
-      </View>
-    </SafeAreaView>
+    <>
+      <StatusBar barStyle='dark-content' backgroundColor='#ffffff'/>
+      <Welcome/>
+    </>
   );
 };
 
