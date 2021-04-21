@@ -1,13 +1,15 @@
 import React from 'react';
 import {
-    Image,
-    SafeAreaView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
-    Dimensions
+  SafeAreaView,
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+  Dimensions
 } from 'react-native';
+
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; 
 
 import wateringImg from '../assets/watering.png';
 import colors from '../styles/colors';
@@ -15,44 +17,50 @@ import colors from '../styles/colors';
 const Welcome = () => {
   return (
     <SafeAreaView style={style.container}>
-      <Text style={style.title}>
-          Gerencie{'\n'}
-          suas plantas{'\n'}
-          de forma fácil
-      </Text>
-      
-      <Image source={wateringImg} style={style.image} resizeMode='contain'/>
+      <View style={style.wrapper}> 
+        <Text style={style.title}>
+            Gerencie{'\n'}
+            suas plantas{'\n'}
+            de forma fácil
+        </Text>
+        
+        <Image source={wateringImg} style={style.image} resizeMode='contain'/>
 
-      <Text style={style.description}> 
-          Não esqueça mais de regar suas{'\n'}
-          plantas. Nós cuidamos de lembrar você{'\n'}
-          sempre que precisar.
-      </Text>
+        <Text style={style.description}> 
+            Não esqueça mais de regar suas{'\n'}
+            plantas. Nós cuidamos de lembrar você{'\n'}
+            sempre que precisar.
+        </Text>
 
-      <TouchableOpacity style={style.button}>
-          <Text style={style.textButton}>
-              >
-          </Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={style.button}>
+            <Icon name='chevron-right' style={style.buttonIcon}/>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
 
 const style = StyleSheet.create({
   container: {
+    flex: 1
+  },
+  wrapper: {
     flex: 1,
     justifyContent: 'space-evenly',
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    
+    paddingHorizontal: 20,
   },
-  title: {
-    fontSize: 32,
-    textAlign: 'center',
-    fontWeight: 'bold',
-    color: colors.heading,
+  title: {    
     marginTop: 30,
-    marginBottom: 30
+    marginBottom: 30,
+    
+    color: colors.heading,
+    
+    fontSize: 32,
+    fontFamily: 'Jost-SemiBold',
+    lineHeight: 38,
+    textAlign: 'center',
   },
 
   image: {
@@ -60,10 +68,14 @@ const style = StyleSheet.create({
   },
 
   description: {
-    fontSize:17,
-    textAlign: 'center',
+    marginVertical: 30,
+    
     color: '#5C6660',
-    marginVertical: 30
+    
+    fontSize:17,
+    fontFamily: 'Jost-Regular',
+    lineHeight: 25,
+    textAlign: 'center',
   },
 
   button: {
@@ -76,7 +88,8 @@ const style = StyleSheet.create({
     marginBottom: 20
   },
 
-  textButton: {
+  buttonIcon: {
+    fontSize: 30,
     color: colors.white
   },
 })
